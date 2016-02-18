@@ -37,22 +37,18 @@
 					<tr>
 						<td class="othertd"></td>
 						<td class="othertd"></td>
-						<td class="othertd"></td>
-						<td class="othertd"></td>
-						<td class="othertd"></td>
-						<td class="othertd"></td>
 						<td class='cell1'>
 							<br>
 							<br>
 						<form method='POST' action='index.php'>
 							<input type='number' size="4" name="NumberOfWords" value="<?php
-							if (isset($_POST['NumberOfWords'])) { echo htmlentities($_POST['NumberOfWords']);
+							if (isset($_POST['NumberOfWords'])) { echo $_POST['NumberOfWords'];
 							} else { echo "3";
 							}
 							?>">
 							<label class="chkbox">Number Of Words </label>
 							<br>
-							<label class="chkbox" id="rang">(Range is 3-9)</label> <?php echo $err_mesg; ?>
+							<label class="chkbox rang">(Range is 3-9)</label> <?php echo $err_mesg; ?>
 							<?php if (!$flag_err) {?>
 							<br>
 							<br>
@@ -73,6 +69,24 @@
 							>
 							<label class="chkbox">Use Special Character</label>
 							<br>
+							<br>							
+							<input type="radio" name="Separator" <?php if (isset($Separator) && $Separator=="hyphen") echo "checked";?>  value="hyphen">Hyphen
+							<input type="radio" name="Separator" <?php if (isset($Separator) && $Separator=="semicolon") echo "checked";?>  value="semicolon">SemiColon
+							<label class="chkbox">Use Word Separator</label>
+							<br><label class="chkbox rang">(Default is a space)</label><br>
+							<br>
+							<br>
+							<input type='number' size="4" name="NumberOfSplChar" value="<?php
+							if (isset($_POST['NumberOfSplChar'])) { echo $_POST['NumberOfSplChar'];
+							}
+							?>">
+							<label class="chkbox">Number Of Special Characters </label>
+							<br>
+							<label class="chkbox rang">(Range is 1-4)</label> <?php echo $err_mesg; ?>
+							<?php if (!$flag_err) {?>
+							<br>
+							<br>
+							<?php }; ?>
 							<br>
 							<input class="subm" type='submit' name="submit" value='Get me a password'>
 						</form>

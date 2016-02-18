@@ -1,5 +1,6 @@
 <?php
 
+#Global variables
 $user_input = Array();
 $flag_err = false;
 $err_mesg = "";
@@ -31,12 +32,14 @@ $spl_char = array(
     9    => "*"
     );
 
+# Function to get unique random number
 function get_unique_random_number($min, $max, $count) {
 	$num_array = range($min, $max);
 	shuffle($num_array);
 	return array_slice($num_array, 0, $count);
 }
 
+# Function to get unique words
 function get_unique_words($number_of_words) {
 	global $pass_str,$words_arr,$num_arr,$html_arr;
 	$i=$j=0;
@@ -50,18 +53,6 @@ function get_unique_words($number_of_words) {
 	$words = $dom -> getElementsByTagName('li');
 	$num_arr = get_unique_random_number(0,100,$number_of_words);
 	sort($num_arr);
-	/*
-	foreach ($num_arr as $key => $val) {
-			echo "num[" . $key . "] = " . $val . "\n";
-		}
-		print_r("sorted");
-		print_r (sort($num_arr));
-		foreach ($num_arr as $key => $val) {
-			echo "num[" . $key . "] = " . $val . "\n";
-		}
-		print_r("After sorted");
-		print_r ($num_arr);*/
-	
 	foreach ($words as $word) {
 		if ($j < $number_of_words) {
 			if ($i == $num_arr[$j]) {
@@ -86,32 +77,66 @@ function get_unique_words($number_of_words) {
 
 }
 
+# Store the POST values in to user_input array
 foreach ($_POST as $key => $value) {
 	$user_input[$key] = $value;
 }
 
+# Check for form submission
 if (isset($_POST['submit'])) {
+		
 	$NumberOfWords = $_POST['NumberOfWords'];
+	
+	# Validate the user inputs
+	
+	# Validate the number of words to generate
 	if (empty($NumberOfWords)) {
 		$flagErr = true;
 		$err_mesg .= '<label class="err">Invalid input so defaulting to 3 words</label>';
 		$NumberOfWords = 3;
 	}
+	
+	# Validate the max number of special character
+	if (!empty($user_input['NumberOfSplChar']) && ($user_input['NumberOfSplChar'] < 1 || $user_input['NumberOfSplChar'] > 4)) {
+		$flagErr = true;
+		$err_mesg .= '<label class="err">Make sure the input value is between 1 and 4</label>';
+	}
+
+	# Validate the range for number of words to generate
 	if ($NumberOfWords < 3 || $NumberOfWords > 9) {
 		$flagErr = true;
 		$err_mesg .= '<label class="err">Make sure the input value is between 3 and 9</label>';
 	} else {
+		# All validation done, now start creating the password string 
 		get_unique_words ($NumberOfWords);
-		$passwd = trim($pass_str);
-		if (!empty($user_input['Number']) && $user_input['Number']== '1') {
+		$passwd = trim(preg_replace('/\s+/', ' ',$pass_str));
+		
+		# Check for word separator
+		if (!empty($user_input['Separator']) && $user_input['Separator'] == "hyphen") {
+			$passwd = trim(preg_replace('/\s+/', '-',$pass_str));
+		} elseif (!empty($user_input['Separator']) && $user_input['Separator'] == "semicolon") {
+			$passwd = trim(preg_replace('/\s+/', ';',$pass_str));
+		}
+		
+		# Check for numbers
+		if (!empty($user_input['Number']) && $user_input['Number'] == '1') {
 			$passwd .= rand(0,9);
 		}
-		if (!empty($user_input['SplSymb']) && $user_input['SplSymb']== '1') {
-			$passwd = $spl_char[rand(0,9)].$passwd ;
+			
+		# Check for special character
+		if ((!empty($user_input['SplSymb']) && $user_input['SplSymb'] == '1') || (!empty($user_input['NumberOfSplChar']) )){
+			if (!empty($user_input['NumberOfSplChar']) ) {
+				$spl_count = $user_input['NumberOfSplChar'];
+				for ($i = 0; $i < $spl_count; $i++) {
+					$passwd = $spl_char[rand(0,9)].$passwd ;
+				}
+			} else {
+				$passwd = $spl_char[rand(0,9)].$passwd ;
+			}
 		}
 	}
 }
-#print_r($user_input);
+#print_r ($user_input);
 #print_r ($pass_str);
 #print_r ($num_arr);
 #print_r ($user_input);

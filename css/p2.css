@@ -65,14 +65,22 @@ label {
    	float: left;
 }
 
-#rang {
+.rang {
 	color: #2F4F4F;
 	font-weight: normal;
 	font-size: small;
 }
+
+#rang1 {
+	color: #2F4F4F;
+	font-weight: normal;
+	font-size: small;
+}
+
 .othertd {
 	width: 50px;
 }
+
 textarea  
 {  
    	background: #F9F7F2;
