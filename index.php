@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>Dynamic Web Applications - Project P2</title>
-		<link href='css/p1.css' rel='stylesheet'>
+		<link href='css/p2.css' rel='stylesheet'>
 		<?php
 		require 'logic.php';
 		?>
