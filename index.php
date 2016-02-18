@@ -48,7 +48,7 @@
 							?>">
 							<label class="chkbox">Number Of Words </label>
 							<br>
-							<label class="chkbox rang">(Range is 3-9)</label> <?php echo $err_mesg; ?>
+							<label class="chkbox rang">(Range is 3-9)</label> <?php echo $err_mesg1; ?>
 							<?php if (!$flag_err) {?>
 							<br>
 							<br>
@@ -82,7 +82,7 @@
 							?>">
 							<label class="chkbox">Number Of Special Characters </label>
 							<br>
-							<label class="chkbox rang">(Range is 1-4)</label> <?php echo $err_mesg; ?>
+							<label class="chkbox rang">(Range is 1-4)</label> <?php echo $err_mesg2; ?>
 							<?php if (!$flag_err) {?>
 							<br>
 							<br>

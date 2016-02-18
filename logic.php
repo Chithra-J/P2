@@ -3,7 +3,7 @@
 #Global variables
 $user_input = Array();
 $flag_err = false;
-$err_mesg = "";
+$err_mesg1 = $err_mesg2 = "";
 $html_arr = array(
     0    => "http://www.paulnoll.com/Books/Clear-English/words-01-02-hundred.html",
     1    => "http://www.paulnoll.com/Books/Clear-English/words-03-04-hundred.html",
@@ -92,20 +92,20 @@ if (isset($_POST['submit'])) {
 	# Validate the number of words to generate
 	if (empty($NumberOfWords)) {
 		$flagErr = true;
-		$err_mesg .= '<label class="err">Invalid input so defaulting to 3 words</label>';
+		$err_mesg1 = '<label class="err">Invalid input so defaulting to 3 words</label>';
 		$NumberOfWords = 3;
 	}
 	
 	# Validate the max number of special character
 	if (!empty($user_input['NumberOfSplChar']) && ($user_input['NumberOfSplChar'] < 1 || $user_input['NumberOfSplChar'] > 4)) {
 		$flagErr = true;
-		$err_mesg .= '<label class="err">Make sure the input value is between 1 and 4</label>';
+		$err_mesg2 = '<label class="err">Make sure the input value is between 1 and 4</label>';
 	}
 
 	# Validate the range for number of words to generate
 	if ($NumberOfWords < 3 || $NumberOfWords > 9) {
 		$flagErr = true;
-		$err_mesg .= '<label class="err">Make sure the input value is between 3 and 9</label>';
+		$err_mesg1 = '<label class="err">Make sure the input value is between 3 and 9</label>';
 	} else {
 		# All validation done, now start creating the password string 
 		get_unique_words ($NumberOfWords);

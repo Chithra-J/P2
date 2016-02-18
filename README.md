@@ -1,7 +1,7 @@
 # Dynamic Web Applications Project P2
 
 Project P2 is to practice working with basics of PHP implementing a password generator. This project is built using PHP, HTML and CSS. Uses first 10 pages from 
-paulnoll.com](http://www.paulnoll.com/Books/Clear-English/English-3000-common-words.html) which has most commonly used words in the English to randomly select a page and  generate the password with other given inputs.
+[paulnoll.com](http://www.paulnoll.com/Books/Clear-English/English-3000-common-words.html) which has most commonly used words in the English to randomly select a page and  generate the password with other given inputs.
 
 ## Live URL of the project
 
