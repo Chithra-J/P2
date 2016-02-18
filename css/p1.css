@@ -1,0 +1,87 @@
+.layout {
+	margin: auto;
+	text-align: center;
+	background: #CCA383;
+	padding: 10px 0px;
+}
+h3 {
+	text-align: right;
+}
+.course {
+	padding: 5px;
+	background: #E5DDEA;
+	margin: 0;
+	font-family:"Book Antiqua";
+}
+#projects {
+	padding: 5px 0px;
+}
+
+#bg {
+	background-color: #F9F7F2
+}
+
+.project {
+	padding: 5px;
+	margin: 5px;
+	background: #C8D5E8;
+	float: right;
+	font-family: "Verdana";
+	font-size: large;
+}
+
+.intro {
+	margin: 20px 0px;
+	text-align: left;
+}
+
+.subm {
+	float: left;
+	padding-left: 20px;
+	text-align: right;
+}
+p {
+	font-family: "Comic Sans MS";
+	font-size: medium;
+}
+.err {
+	font-family: "Comic Sans MS";
+	font-size: small;
+	color: red;	
+}
+.chkbox {
+    font-weight: bold;
+    font-size: large ;
+}
+.chkmsg {
+    padding-left: 20px;
+    font-weight: bold;
+}
+
+label {
+	color: #8B0000;
+   	width: 250px;
+   	font-weight: bold;
+   	float: left;
+}
+
+#rang {
+	color: #2F4F4F;
+	font-weight: normal;
+	font-size: small;
+}
+
+textarea  
+{  
+   	background: #F9F7F2;
+	font-family: "Verdana";
+	font-size: large;
+	font-weight: bold;
+	color: blue;
+}
+
+.cell1 {
+	border: thick double #483D8B;
+	margin-right: 10px;
+	padding: 10px;
+}
