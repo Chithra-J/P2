@@ -34,20 +34,18 @@
 				<br>
 				<table>
 					<tbody>
-						<tr></tr>
 					<tr>
-						<td width="50"></td>
-						<td width="50"></td>
-						<td width="50"></td>
-						<td width="50"></td>
-						<td width="50"></td>
-						<td width="50"></td>
-						<td width="50"></td>
+						<td class="othertd"></td>
+						<td class="othertd"></td>
+						<td class="othertd"></td>
+						<td class="othertd"></td>
+						<td class="othertd"></td>
+						<td class="othertd"></td>
 						<td class='cell1'>
 							<br>
 							<br>
 						<form method='POST' action='index.php'>
-							<input type='number' maxlength="1" size="4" name="NumberOfWords" value="<?php
+							<input type='number' size="4" name="NumberOfWords" value="<?php
 							if (isset($_POST['NumberOfWords'])) { echo htmlentities($_POST['NumberOfWords']);
 							} else { echo "3";
 							}
@@ -81,18 +79,15 @@
 						<br>
 						<br>
 						</td>
-						<td width="50"></td>
-						</td>
-						<td width="50"></td>
+						<td class="othertd"></td>
+						<td class="othertd"></td>
 						<td>
 							<label class="chkbox">Your Choice Of Password:</label>
 							<br>						
 							<br>
 							<br>
 							<textarea name="passwd" cols="45" rows="3"><?php if (!empty($passwd) && (strlen($passwd) > 0)) { echo $passwd; } else { echo "";} ?></textarea></td>
-							<br>
 					</tr>
-					<tr></tr>
 					</tbody>
 				</table>
 				<p>

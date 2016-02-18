@@ -70,7 +70,9 @@ label {
 	font-weight: normal;
 	font-size: small;
 }
-
+.othertd {
+	width: 50px;
+}
 textarea  
 {  
    	background: #F9F7F2;
