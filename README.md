@@ -1,10 +1,11 @@
-# Dynamic Web Applications Project P1
+# Dynamic Web Applications Project P2
 
-This is the first project "P1" that mainly deals with the basic configuration of different environment for the Dynamic Web Applications course.
+Project P2 is to practice working with basics of PHP implementing a password generator. This project is built using PHP, HTML and CSS. Uses first 10 pages from 
+paulnoll.com](http://www.paulnoll.com/Books/Clear-English/English-3000-common-words.html) which has most commonly used words in the English to randomly select a page and  generate the password with other given inputs.
 
 ## Live URL of the project
 
-Live URL of the project can be found [here](http://p1.chanchika.me/).
+Live URL of the project can be found [here](http://p2.chanchika.me/).
 
 ## Demo
 
