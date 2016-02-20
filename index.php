@@ -1,6 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
+		<meta charset="utf-8">
+		<!-- Set the viewport so this responsive site displays correctly on mobile devices -->
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Chithra Jayakumar P2 Demo">
+		<meta name="author" content="Chithra Jayakumar">
 		<title>Dynamic Web Applications - Project P2</title>
 		<link href='css/p2.css' rel='stylesheet'>
 		<?php
